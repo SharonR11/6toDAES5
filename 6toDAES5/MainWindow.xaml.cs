@@ -17,7 +17,10 @@ namespace _6toDAES5
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+        
         private string connectionString = "Data Source=DESKTOP-BBBE09E\\SQLEXPRESS;Initial Catalog=Neptuno;User Id=userSharon;Password=010203";
+        /// Al eliminar esta cadena debo cambiar el sqlconection
 
         public MainWindow()
         {
@@ -28,6 +31,8 @@ namespace _6toDAES5
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
+                //sin static ...using (SqlConnection connection = new SqlConnection((new BaseDatos()).connectionString)
+                //using (SqlConnection connection = new SqlConnection(BaseDatos.connectionString))
                 {
                     connection.Open();
 
